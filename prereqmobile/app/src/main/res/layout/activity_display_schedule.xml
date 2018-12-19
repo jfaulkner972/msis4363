@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jfaulkner.prereqmobile.displaySchedule">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/course1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/course2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/course3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/course4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/course5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/course6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/saveSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:onClick="saveSchedule"
+            android:text="Save Schedule"
+            android:textColor="#FF8C00"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

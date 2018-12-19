@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jfaulkner.prereqmobile.courseResults">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/courseResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Course Name"
+            android:textScaleX="1"
+            android:textSize="30sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/prereq1"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:text="Prerequisite"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/prereqTxt1"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/prereq2"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:text="Prerequisite"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/prereqTxt2"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="24sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/prereq3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prerequisite"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/prereqTxt3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="24sp" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

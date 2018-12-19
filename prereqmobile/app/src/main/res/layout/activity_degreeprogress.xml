@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jfaulkner.prereqmobile.degreeprogress">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/updateProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:onClick="updateProgress"
+            android:text="Update my progress"
+            android:textColor="#FF8C00"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/saveProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:onClick="saveProgress"
+            android:text="Save Changes"
+            android:visibility="gone"
+            android:textColor="#FF8C00"
+            android:textStyle="bold"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:id="@+id/i1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i1">
+
+                <TextView
+                    android:id="@+id/c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:clickable="false"
+                    android:tag="pass"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+
+                <CheckBox
+                    android:id="@+id/fail1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:tag="fail"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+
+                <CheckBox
+                    android:id="@+id/inProgress1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i2">
+
+                <TextView
+                    android:id="@+id/c2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c2"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass2"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail2"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress2"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i3">
+
+                <TextView
+                    android:id="@+id/c3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c3"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass3"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail3"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress3"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i4">
+
+                <TextView
+                    android:id="@+id/c4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c4"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass4"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail4"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress4"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i5">
+
+                <TextView
+                    android:id="@+id/c5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c5"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass5"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail5"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress5"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i6">
+
+                <TextView
+                    android:id="@+id/c6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c6"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass6"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail6"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress6"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i7">
+
+                <TextView
+                    android:id="@+id/c7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c7"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass7"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail7"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress7"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i8">
+
+                <TextView
+                    android:id="@+id/c8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c8"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass8"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail8"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress8"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i9">
+
+                <TextView
+                    android:id="@+id/c9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c9"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass9"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail9"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress9"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i10">
+
+                <TextView
+                    android:id="@+id/c10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c10"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass10"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail10"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress10"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i11">
+
+                <TextView
+                    android:id="@+id/c11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c11"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass11"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail11"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress11"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/i12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="i12"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/c12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="c12"
+                    android:text="TextView" />
+
+                <CheckBox
+                    android:id="@+id/pass12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="pass12"
+                    android:text="Pass"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/fail12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="fail12"
+                    android:text="Fail"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/inProgress12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="inProgress12"
+                    android:text="In Progress"
+                    android:textColor="#FF8C00"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

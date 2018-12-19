@@ -1,4 +1,4 @@
-# msis4363
+# MSIS4363 Mobile Application Development
 MSIS 4363 Final Project- Course Planning Android Application
 
 This is my final project for Oklahoma State University's MSIS 4363 Mobile Application Development course. The goal of this application was to create an application that would allow users to check if they could enroll in an MSIS course, or if they lacked a prerequisite for that course. The final version of this application has three main features. 
@@ -18,11 +18,13 @@ This is my final project for Oklahoma State University's MSIS 4363 Mobile Applic
  This project was done in collaboration with Matt Arvizu. Responsibilities are listed below.
  
  UI Design: Matt Arvizu
+ 
  Backend development, Database configuration and integration: Jason Faulkner
  
  Current Work:
  
  Reformat code to better utilize Object Oriented Design principles
  Comment code to improve readabillity.
+ Implement stored procedures to improve security
  
  

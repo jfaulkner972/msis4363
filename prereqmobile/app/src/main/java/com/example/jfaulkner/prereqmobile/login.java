@@ -137,7 +137,6 @@ public class login extends AppCompatActivity
         {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
             //your database connection string goes below
-            ConnectionURL = "jdbc:jtds:sqlserver://prereqaf.database.windows.net:1433;DatabaseName=prereqaf;user=raven@prereqaf;password=yourHeartAndSoul!;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=300;";
             connection = DriverManager.getConnection(ConnectionURL);
         }
         catch (SQLException se)

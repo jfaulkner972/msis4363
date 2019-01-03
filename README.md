@@ -21,13 +21,12 @@ This is my final project for Oklahoma State University's MSIS 4363 Mobile Applic
  
  Backend development, Database configuration and integration: Jason Faulkner
  
- Current Work:
+ Database connection class template provided by Taha Havakhor for educational purposes.
  
- Reformat code to better utilize Object Oriented Design principles
+ Current Work:
  
  Comment code to improve readabillity.
  
- Implement stored procedures to improve security
  
  
  

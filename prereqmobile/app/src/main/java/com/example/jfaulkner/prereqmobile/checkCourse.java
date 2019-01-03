@@ -1,24 +1,18 @@
 package com.example.jfaulkner.prereqmobile;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
-public class checkCourse extends AppCompatActivity {
+public class CheckCourse extends AppCompatActivity {
 
     public Connection con;
 
@@ -49,7 +43,8 @@ public class checkCourse extends AppCompatActivity {
 
             try
             {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null)
                 {
                     z = "Check Your Internet Access!";
@@ -88,38 +83,10 @@ public class checkCourse extends AppCompatActivity {
     }
 
 
-    @SuppressLint("NewApi")
-    public Connection connectionclass()
-    {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try
-        {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            //your database connection string goes below
-            connection = DriverManager.getConnection(ConnectionURL);
-        }
-        catch (SQLException se)
-        {
-            Log.e("error here 1 : ", se.getMessage());
-        }
-        catch (ClassNotFoundException e)
-        {
-            Log.e("error here 2 : ", e.getMessage());
-        }
-        catch (Exception e)
-        {
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
-    }
-
     public void checkCoursePreReq(View v){
         Button b = (Button)v;
         String courseName = b.getText().toString();
-        Intent i = new Intent(this,courseResults.class);
+        Intent i = new Intent(this,CourseResults.class);
         i.putExtra("name",courseName);
         startActivity(i);
 

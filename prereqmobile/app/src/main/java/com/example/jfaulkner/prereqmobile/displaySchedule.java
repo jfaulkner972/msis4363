@@ -12,15 +12,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class displaySchedule extends AppCompatActivity {
+public class DisplaySchedule extends AppCompatActivity {
 
     public Connection con;
     private static String user = "";
@@ -53,24 +51,24 @@ public class displaySchedule extends AppCompatActivity {
         @Override
         protected void onPostExecute(String r) {
 
-            int setInvisble = 0;
+            int setInvisible = 0;
             for (int i = 0; i < nextClass.split(";").length; i++) {
                 TextView t = findViewById(getResources().getIdentifier("course" + (i + 1), "id", getPackageName()));
                 t.setText(nextClass.split(";")[i]);
-                setInvisble = i;
+                setInvisible = i;
             }
-            setInvisble += 2;
-            while (setInvisble < 7) {
-                TextView u = findViewById(getResources().getIdentifier("course" + (setInvisble), "id", getPackageName()));
+            setInvisible += 2;
+            while (setInvisible < 7) {
+                TextView u = findViewById(getResources().getIdentifier("course" + (setInvisible), "id", getPackageName()));
                 u.setVisibility(View.INVISIBLE);
-                setInvisble++;
+                setInvisible++;
             }
 
             TextView t = findViewById(R.id.status);
             t.setText("You need to have passed the following classes to take these classes. " +
                     "Check your progress to see if you have passed them: " + r);
 
-            //Toast.makeText(displaySchedule.this, r, Toast.LENGTH_LONG).show();
+            //Toast.makeText(DisplaySchedule.this, r, Toast.LENGTH_LONG).show();
             preq = r;
             Button b = findViewById(R.id.saveSchedule);
             b.setVisibility(View.VISIBLE);
@@ -83,7 +81,8 @@ public class displaySchedule extends AppCompatActivity {
             nextClass = getIntent().getStringExtra("nextClass");
 
             try {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null) {
                     z = "Check Your Internet Access!";
                 } else {
@@ -119,8 +118,8 @@ public class displaySchedule extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String r) {
-            //Toast.makeText(displaySchedule.this, r, Toast.LENGTH_LONG).show();
-            int setInvisble = 0;
+            //Toast.makeText(DisplaySchedule.this, r, Toast.LENGTH_LONG).show();
+            int setInvisible = 0;
             TextView success = findViewById(R.id.status);
             if (r.split("z").length == 2) {
                 success.setText("You need to have passed the following classes to take these classes. " +
@@ -128,21 +127,21 @@ public class displaySchedule extends AppCompatActivity {
                 for (int i = 0; i < r.split("z")[0].split(";").length; i++) {
                     TextView t = findViewById(getResources().getIdentifier("course" + (i + 1), "id", getPackageName()));
                     t.setText(r.split(";")[i]);
-                    setInvisble = i;
+                    setInvisible = i;
                 }
-                setInvisble += 2;
-                while (setInvisble < 7) {
-                    TextView u = findViewById(getResources().getIdentifier("course" + (setInvisble), "id", getPackageName()));
+                setInvisible += 2;
+                while (setInvisible < 7) {
+                    TextView u = findViewById(getResources().getIdentifier("course" + (setInvisible), "id", getPackageName()));
                     u.setVisibility(View.INVISIBLE);
-                    setInvisble++;
+                    setInvisible++;
                 }
             } else {
                 success.setText("Please Make a Schedule");
-                setInvisble = 1;
-                while (setInvisble < 7) {
-                    TextView u = findViewById(getResources().getIdentifier("course" + (setInvisble), "id", getPackageName()));
+                setInvisible = 1;
+                while (setInvisible < 7) {
+                    TextView u = findViewById(getResources().getIdentifier("course" + (setInvisible), "id", getPackageName()));
                     u.setVisibility(View.INVISIBLE);
-                    setInvisble++;
+                    setInvisible++;
                 }
             }
         }
@@ -151,7 +150,8 @@ public class displaySchedule extends AppCompatActivity {
         protected String doInBackground(String... params) {
             String course = "";
             try {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null) {
                     z = "Check Your Internet Access!";
                 } else {
@@ -187,27 +187,7 @@ public class displaySchedule extends AppCompatActivity {
         }
     }
 
-
-    @SuppressLint("NewApi")
-    public Connection connectionclass() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            //your database connection string goes below
-          connection = DriverManager.getConnection(ConnectionURL);
-        } catch (SQLException se) {
-            Log.e("error here 1 : ", se.getMessage());
-        } catch (ClassNotFoundException e) {
-            Log.e("error here 2 : ", e.getMessage());
-        } catch (Exception e) {
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
-    }
-
+    
     public void saveSchedule(View v) {
         insertSchedule insertSchedule = new insertSchedule();
         insertSchedule.execute("");
@@ -220,16 +200,17 @@ public class displaySchedule extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String r) {
-            Toast.makeText(displaySchedule.this, r, Toast.LENGTH_LONG).show();
-            Intent i = new Intent(displaySchedule.this, nextSemester.class);
+            Toast.makeText(DisplaySchedule.this, r, Toast.LENGTH_LONG).show();
+            Intent i = new Intent(DisplaySchedule.this, NextSemester.class);
             i.putExtra("user", user);
-            displaySchedule.this.startActivity(i);
+            DisplaySchedule.this.startActivity(i);
         }
 
         @Override
         protected String doInBackground(String... params) {
             try {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null) {
                     z = "Check Your Internet Access!";
                 } else {

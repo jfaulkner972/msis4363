@@ -13,21 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".menuActivity" />
-        <activity android:name=".signup" />
-        <activity android:name=".degreeprogress" />
-        <activity android:name=".checkCourse" />
-        <activity android:name=".courseResults" />
-        <activity android:name=".nextSemester" />
-        <activity android:name=".buildSchedule" />
-        <activity android:name=".displaySchedule"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".Signup" />
+        <activity android:name=".DegreeProgress" />
+        <activity android:name=".CheckCourse" />
+        <activity android:name=".CourseResults" />
+        <activity android:name=".NextSemester" />
+        <activity android:name=".BuildSchedule" />
+        <activity android:name=".DisplaySchedule"></activity>
     </application>
 
 </manifest>

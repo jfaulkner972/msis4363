@@ -20,7 +20,7 @@ import java.sql.Statement;
 
 
 
-public class login extends AppCompatActivity
+public class Login extends AppCompatActivity
 {
     // Declaring layout button, edit texts
     public Button run;
@@ -52,7 +52,7 @@ public class login extends AppCompatActivity
                 checkLogin.execute("");
             }
         });
-        //End Setting up the function when button login is clicked
+        //End Setting up the function when button Login is clicked
     }
 
     public class CheckLogin extends AsyncTask<String,String,String>
@@ -64,12 +64,12 @@ public class login extends AppCompatActivity
         @Override
         protected void onPostExecute(String r)
         {
-            Toast.makeText(login.this, r, Toast.LENGTH_LONG).show();
+            Toast.makeText(Login.this, r, Toast.LENGTH_LONG).show();
             if(isSuccess)
             {
-                Intent a = new Intent(login.this,menuActivity.class);
+                Intent a = new Intent(Login.this,MenuActivity.class);
                 a.putExtra("user",userAccount);
-                login.this.startActivity(a);
+                Login.this.startActivity(a);
             }
         }
         @Override
@@ -78,7 +78,8 @@ public class login extends AppCompatActivity
 
             try
             {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null)
                 {
                     z = "Check Your Internet Access!";
@@ -126,36 +127,8 @@ public class login extends AppCompatActivity
     }
 
 
-    @SuppressLint("NewApi")
-    public Connection connectionclass()
-    {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try
-        {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            //your database connection string goes below
-            connection = DriverManager.getConnection(ConnectionURL);
-        }
-        catch (SQLException se)
-        {
-            Log.e("error here 1 : ", se.getMessage());
-        }
-        catch (ClassNotFoundException e)
-        {
-            Log.e("error here 2 : ", e.getMessage());
-        }
-        catch (Exception e)
-        {
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
-    }
-
     public void signUp(View v){
-        Intent i = new Intent(this,signup.class);
+        Intent i = new Intent(this,Signup.class);
         startActivity(i);
 
     }

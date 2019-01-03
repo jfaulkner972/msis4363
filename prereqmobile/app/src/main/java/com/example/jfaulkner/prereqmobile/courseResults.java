@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class courseResults extends AppCompatActivity {
+public class CourseResults extends AppCompatActivity {
 
     public Connection con;
     private String courseName;
@@ -73,7 +73,8 @@ public class courseResults extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             try {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null) {
                     z = "Check Your Internet Access!";
                 } else {
@@ -100,25 +101,6 @@ public class courseResults extends AppCompatActivity {
     }
 
 
-    @SuppressLint("NewApi")
-    public Connection connectionclass() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            //your database connection string goes below
-            connection = DriverManager.getConnection(ConnectionURL);
-        } catch (SQLException se) {
-            Log.e("error here 1 : ", se.getMessage());
-        } catch (ClassNotFoundException e) {
-            Log.e("error here 2 : ", e.getMessage());
-        } catch (Exception e) {
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
-    }
 
 
 }

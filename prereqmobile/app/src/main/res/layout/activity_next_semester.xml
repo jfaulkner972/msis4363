@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jfaulkner.prereqmobile.nextSemester">
+    tools:context="com.example.jfaulkner.prereqmobile.NextSemester">
 
     <LinearLayout
         android:layout_width="match_parent"

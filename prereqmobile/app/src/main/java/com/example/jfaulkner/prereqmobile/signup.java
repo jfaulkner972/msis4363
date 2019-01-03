@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class signup extends AppCompatActivity {
+public class Signup extends AppCompatActivity {
 
     public Button run;
     public Connection con;
@@ -46,10 +46,10 @@ public class signup extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String r) {
-            Toast.makeText(signup.this, r, Toast.LENGTH_LONG).show();
+            Toast.makeText(Signup.this, r, Toast.LENGTH_LONG).show();
             if (isSuccess) {
-                Intent a = new Intent(signup.this, login.class);
-                signup.this.startActivity(a);
+                Intent a = new Intent(Signup.this, Login.class);
+                Signup.this.startActivity(a);
             }
         }
 
@@ -57,7 +57,8 @@ public class signup extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             try {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null) {
                     z = "Check Your Internet Access!";
                 }
@@ -88,7 +89,7 @@ public class signup extends AppCompatActivity {
                         ResultSet rs = stmt.executeQuery(query);
                         if (rs.next()) {
                             name1 = rs.getString("loginID"); //Name is the string label of a column in database, read through the select query
-                            z = "Thank you for signing up please login";
+                            z = "Thank you for signing up please Login";
                             isSuccess = true;
                             con.close();
 
@@ -112,26 +113,5 @@ public class signup extends AppCompatActivity {
 
             return z;
         }
-    }
-
-
-    @SuppressLint("NewApi")
-    public Connection connectionclass() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            //your database connection string goes below
-           connection = DriverManager.getConnection(ConnectionURL);
-        } catch (SQLException se) {
-            Log.e("error here 1 : ", se.getMessage());
-        } catch (ClassNotFoundException e) {
-            Log.e("error here 2 : ", e.getMessage());
-        } catch (Exception e) {
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
     }
 }

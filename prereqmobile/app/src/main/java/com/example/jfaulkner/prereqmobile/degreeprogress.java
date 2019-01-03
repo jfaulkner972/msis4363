@@ -19,7 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class degreeprogress extends AppCompatActivity {
+public class DegreeProgress extends AppCompatActivity {
 
     public Connection con;
     public String user;
@@ -86,7 +86,7 @@ public class degreeprogress extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String r) {
-            //Toast.makeText(degreeprogress.this, r, Toast.LENGTH_LONG).show();
+            //Toast.makeText(DegreeProgress.this, r, Toast.LENGTH_LONG).show();
             if (r.split(":").length == 1) {
                 String course = r.split(":")[0];
                 int courseNumber = course.split(";").length;
@@ -100,7 +100,7 @@ public class degreeprogress extends AppCompatActivity {
                 String status = r.split(":")[1];
                 int courseNumber = course.split(";").length;
                 int statusNumber = status.split(";").length;
-                //Toast.makeText(degreeprogress.this, status.split(";")[0], Toast.LENGTH_LONG).show();
+                //Toast.makeText(DegreeProgress.this, status.split(";")[0], Toast.LENGTH_LONG).show();
                 TextView t;
                 CheckBox v;
                 for (int i = 0; i < courseNumber; i++) {
@@ -126,7 +126,8 @@ public class degreeprogress extends AppCompatActivity {
         protected String doInBackground(String... params) {
 
             try {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null) {
                     z = "Check Your Internet Access:";
                 } else {
@@ -176,14 +177,15 @@ public class degreeprogress extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String r) {
-            Toast.makeText(degreeprogress.this, r, Toast.LENGTH_LONG).show();
+            Toast.makeText(DegreeProgress.this, r, Toast.LENGTH_LONG).show();
         }
 
         @Override
         protected String doInBackground(String... params) {
 
             try {
-                con = connectionclass();        // Connect to database
+                DatabaseConnection connection = new DatabaseConnection();
+                con = connection.connectionclass();        // Connect to database
                 if (con == null) {
                     z = "Check Your Internet Access!";
                 } else {
@@ -248,27 +250,6 @@ public class degreeprogress extends AppCompatActivity {
             }
             return z;
         }
-    }
-
-
-    @SuppressLint("NewApi")
-    public Connection connectionclass() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnectionURL = null;
-        try {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            //your database connection string goes below
-            connection = DriverManager.getConnection(ConnectionURL);
-        } catch (SQLException se) {
-            Log.e("error here 1 : ", se.getMessage());
-        } catch (ClassNotFoundException e) {
-            Log.e("error here 2 : ", e.getMessage());
-        } catch (Exception e) {
-            Log.e("error here 3 : ", e.getMessage());
-        }
-        return connection;
     }
 
 
